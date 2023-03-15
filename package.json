@@ -10,7 +10,8 @@
   "author": "p1ass",
   "license": "MIT",
   "dependencies": {
-    "langchain": "^0.0.33"
+    "langchain": "^0.0.33",
+    "serpapi": "^1.1.1"
   },
   "devDependencies": {
     "@types/node": "^18.15.3",
