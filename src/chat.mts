@@ -76,7 +76,7 @@ export async function executeChatChain(OPEN_AI_KEY: string) {
 }
  */
 
-export async function executeChatAgentSample(OPEN_AI_KEY: string) {
+export async function executeChatAgentSample(OPEN_AI_KEY: string, query: string) {
   const chat = new ChatOpenAI({
     openAIApiKey: OPEN_AI_KEY,
     verbose: true,
@@ -90,7 +90,7 @@ export async function executeChatAgentSample(OPEN_AI_KEY: string) {
   // Create an executor, which calls to the agent until an answer is found
   const executor = AgentExecutor.fromAgentAndTools({ agent, tools, maxIterations: 5 })
 
-  const responseG = await executor.run('2023年3月13日の1USDは何円ですか？')
+  const responseG = await executor.run(query)
 
   console.log(responseG)
 }

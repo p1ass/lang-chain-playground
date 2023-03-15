@@ -1,4 +1,5 @@
 import { executeChatAgentSample, executeChatChain, executeChatSample } from './chat.mjs'
+import { executeDocumentSample } from './document.mjs'
 import { executeHubSample } from './hub.mjs'
 import { executeMemorySample } from './memory.mjs'
 import { executeOutputParserExample } from './outputParser.mjs'
@@ -10,7 +11,8 @@ async function main() {
   if (!OPEN_AI_KEY) {
     throw new Error('environment variable OPEN_AI_KEY is not set')
   }
-  await executeChatAgentSample(OPEN_AI_KEY)
+
+  await executeDocumentSample()
 }
 
 main()
